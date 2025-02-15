@@ -65,6 +65,15 @@
         </inertial>
     </link>
 
+    <joint name="lidar_joint" type="fixed">
+        <parent link="trunk"/>
+        <child link="utlidar_lidar"/>
+        <origin rpy="0 0 0" xyz="0.32715 -0.00003 -0.04297"/>
+    </joint>
+
+    <link name="utlidar_lidar">
+    </link>
+
     <joint name="imu_joint" type="fixed">
         <parent link="trunk"/>
         <child link="imu_link"/>

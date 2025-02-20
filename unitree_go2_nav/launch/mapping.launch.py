@@ -46,6 +46,10 @@ def generate_launch_description():
 
         # Publish a static transform between base_link and base_laser for standalone use
         # of this launch file   ---> confirm you dont actually need this.
+        # Node(
+        #     package='tf2_ros', executable='static_transform_publisher', output='screen',
+        #     arguments=['0', '0', '0', '0', '0', '0', 'map', 'odom']
+        # ),
 
         # Node(rtabmap generates map, takes in odom and pointcloud/ laser go2 topics) map can be visualised in rviz also.
         Node(
@@ -113,7 +117,12 @@ def generate_launch_description():
                 # Added to resolve frequency mismatch between scan cloud and odom.
                 'sync_queue_size': 50,
                 'topic_queue_size': 50,
+                # Added to make it publish and connect map frame 
+                # 'publish_tf': True,
+                # 'map_frame_id': 'map',
+                # 'odom_frame_id': 'odom',
             }],
+
             remappings=[
                 ('scan_cloud', '/utlidar/cloud'),
                 ('odom', '/utlidar/robot_odom')

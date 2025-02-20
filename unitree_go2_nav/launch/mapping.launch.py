@@ -195,6 +195,14 @@ def generate_launch_description():
             condition=IfCondition(LaunchConfiguration('use_rtabmapviz'))
         ),
 
+        Node(
+            package='unitree_go2_nav', executable='odomTfPublisher', output='screen',
+            remappings=[
+                # ('scan_cloud', '/utlidar/cloud'),
+                ('odom', '/utlidar/robot_odom')
+            ],
+        ),
+
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 PathJoinSubstitution([

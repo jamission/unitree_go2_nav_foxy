@@ -2,9 +2,9 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.substitutions import PathJoinSubstitution, LaunchConfiguration, TextSubstitution
 from launch.conditions import IfCondition
-# from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
-# from launch_ros.substitutions import FindPackageShare
+from launch_ros.substitutions import FindPackageShare
 # from unitree_nav_launch_module import TernaryTextSubstitution
 
 
@@ -193,6 +193,26 @@ def generate_launch_description():
                 ('odom', '/utlidar/robot_odom')
             ],
             condition=IfCondition(LaunchConfiguration('use_rtabmapviz'))
+        ),
+
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                PathJoinSubstitution([
+                    FindPackageShare('go2_description'),
+                    'launch',
+                    'load_go2.launch.py'
+                ])
+            ),
+            launch_arguments=[
+                # These are the possible option, currently set to the default value, can be modified for particular use cases.
+                # ('use_jsp', LaunchConfiguration('use_rtabmapviz')),
+                # ('use_rviz', LaunchConfiguration('icp_odometry_log_level')),
+                # ('use_nav2_links', LaunchConfiguration('localize_only')),
+                # ('fixed_frame', LaunchConfiguration('restart_map')),
+                # ('namespace', LaunchConfiguration('restart_map')),
+                # ('config_file', LaunchConfiguration('restart_map')),
+                # ('rvizconfig', LaunchConfiguration('restart_map')),
+            ],
         ),
 
     ])      

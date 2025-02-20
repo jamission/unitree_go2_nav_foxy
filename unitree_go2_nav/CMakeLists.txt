@@ -14,22 +14,25 @@ find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(nav2_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 # find_package(ros2_unitree_legged_msgs REQUIRED)
 # find_package(unitree_nav_interfaces REQUIRED)
 
-# executables: Nodes also go here.
-# add_executable(cmd_processor src/cmd_processor.cpp)
-# ament_target_dependencies(cmd_processor
-#   rclcpp std_srvs geometry_msgs ros2_unitree_legged_msgs unitree_nav_interfaces
-# )
 
-# add_executable(nav_to_pose src/nav_to_pose.cpp)
-# ament_target_dependencies(nav_to_pose
-#   rclcpp rclcpp_action std_srvs geometry_msgs tf2 tf2_geometry_msgs nav2_msgs unitree_nav_interfaces
-# )
+add_executable(odomTfPublisher src/odomTf.cpp)
+ament_target_dependencies(odomTfPublisher
+  rclcpp rclcpp_action std_srvs geometry_msgs tf2 tf2_geometry_msgs nav2_msgs sensor_msgs nav_msgs
+)
+
+add_executable(navToPose src/navToPose.cpp)
+ament_target_dependencies(navToPose
+  rclcpp rclcpp_action std_srvs geometry_msgs tf2 tf2_geometry_msgs nav2_msgs sensor_msgs nav_msgs
+)
 
 install(TARGETS
-  # cmd_processor nav_to_pose   -----> nodes here
+  odomTfPublisher
+  navToPose
   DESTINATION lib/${PROJECT_NAME}
 )
 

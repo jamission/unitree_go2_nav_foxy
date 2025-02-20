@@ -24,13 +24,6 @@ def generate_launch_description():
             choices=['true','false'],
             description='Enable lidar deskewing'
         ),
-        
-        # DeclareLaunchArgument(
-        #     name='publish_static_tf',
-        #     default_value='true',
-        #     choices=['true','false'],
-        #     description='Publish a static transform between base_link and base_laser for standalone use of this launch file.'
-        # ),
 
         DeclareLaunchArgument(
             name='use_rtabmapviz',
@@ -52,31 +45,7 @@ def generate_launch_description():
         ),
 
         # Publish a static transform between base_link and base_laser for standalone use
-        # of this launch file
-
-        # Can do this that publishh the odom transfr=orm, and not the whole roboto modela nd tfs, see whichever is feasible,
-        # Node(
-        #     package="tf2_ros",  
-        #     executable="static_transform_publisher",
-        #     arguments=['--frame-id', 'base_link', '--child-frame-id', 'base_laser'],
-        #     condition=IfCondition(LaunchConfiguration('publish_static_tf'))
-        # ),
-
-        # Node(
-        #     package="tf2_ros",  
-        #     executable="static_transform_publisher",
-        #     arguments=['--frame-id', 'odom', '--child-frame-id', 'base_link'],
-        #     condition=IfCondition(LaunchConfiguration('publish_static_tf'))
-        # ),        
-
-
-        # Node(
-        #     package="tf2_ros",  
-        #     executable="static_transform_publisher",
-        #     arguments=['--frame-id', '', '--child-frame-id', 'base_link'],
-        #     condition=IfCondition(LaunchConfiguration('publish_static_tf'))
-        # ),
-
+        # of this launch file   ---> confirm you dont actually need this.
 
         # Node(rtabmap generates map, takes in odom and pointcloud/ laser go2 topics) map can be visualised in rviz also.
         Node(

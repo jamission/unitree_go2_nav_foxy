@@ -34,7 +34,7 @@ def generate_launch_description():
 
         DeclareLaunchArgument(
             name='use_rtabmapviz',
-            default_value='false', # suppress incessant VTK 9.0 warnings
+            default_value='true', # suppress incessant VTK 9.0 warnings
             choices=['true','false'],
             description='Start rtabmapviz node'
         ),
@@ -141,6 +141,9 @@ def generate_launch_description():
                 'approx_sync':True, # False
                 'wait_for_transform': 0.3, #0.2,
                 'use_sim_time':LaunchConfiguration('use_sim_time'),
+                # Added to resolve frequency mismatch between scan cloud and odom.
+                'sync_queue_size': 50,
+                'topic_queue_size': 50,
             }],
             remappings=[
                 ('scan_cloud', '/utlidar/cloud'),
@@ -183,7 +186,7 @@ def generate_launch_description():
             parameters=[{
                 'frame_id':'utlidar_lidar',
                 'odom_frame_id':'odom',
-                'subscribe_odom_info':True,
+                'subscribe_odom_info':False,
                 'subscribe_scan_cloud':True,
                 'approx_sync':True, # False
                 'use_sim_time':LaunchConfiguration('use_sim_time'),

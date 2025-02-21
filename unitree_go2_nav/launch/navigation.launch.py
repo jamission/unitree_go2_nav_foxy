@@ -39,12 +39,12 @@ def generate_launch_description():
                     'mapping.launch.py'
                 ])
             ),
-        #     launch_arguments=[
-        #         # ('use_rviz', 'false'),
+            launch_arguments=[
+                ('use_map_rviz', 'true'),
         #         # ('publish_static_tf', 'false'),
         #         # ('localize_only', LaunchConfiguration('localize_only')),
         #         # ('restart_map', LaunchConfiguration('restart_map')),
-        #     ],
+            ],
         ),
 
         IncludeLaunchDescription(

@@ -76,4 +76,4 @@ Add this to your repository as a submodule
       git commit -m "Added submodule unitree_go2_nav" 
       git push origin main 
 
-For reference: https://github.com/Sayantani-Bhattacharya/Multi-Hetero-Agent-Exploration-on-UnitreeGOs/tree/go2_sdk_pkgs
+For reference: https://github.com/Sayantani-Bhattacharya/Multi-Hetero-Agent-Exploration-on-UnitreeGOs/tree/go2_auto_nav

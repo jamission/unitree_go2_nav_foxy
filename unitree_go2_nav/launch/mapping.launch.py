@@ -133,7 +133,7 @@ def generate_launch_description():
             }],
 
             remappings=[
-                ('scan_cloud', '/utlidar/cloud'),
+                ('scan_cloud', '/utlidar/cloud_deskewed'),
                 ('odom', '/utlidar/robot_odom')
             ]
             # ,

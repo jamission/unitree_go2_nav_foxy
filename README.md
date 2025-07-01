@@ -1,11 +1,11 @@
-# ROS2 Navigation for Unitree GO2.
+# ROS2 Navigation for Unitree GO2 (Foxy).
 Author: Sayantani Bhattacharya
-
+Adapted for Foxy by @jamission
 This is a standalone package, that has code and launch files for manual navigation operation on Unitree GO2.
 </br></br>
 Using: 
 - Unitree Go2 in high level mode  [wrapper over Unitree's SDK](https://github.com/Sayantani-Bhattacharya/unitree_ros2)
-- ROS2 Jazzy
+- ROS2 Foxy
 - RTAB-Map
 - Nav2 stack.
 

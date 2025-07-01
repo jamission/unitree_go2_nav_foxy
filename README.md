@@ -10,7 +10,7 @@ Using:
 - Nav2 stack.
 
 ## Features:
-Package Name: unitree_go2_nav
+Package Name: unitree_go2_nav_foxy
 - Transform publishers.
 - Robot State publishers.
 - Rtabmap pkgs generating odom tf and occupancy grid using GO2's 4d Lidar.
@@ -20,7 +20,7 @@ Package Name: unitree_go2_nav
 
 ## Setup   
   1.     mkdir src && cd src
-         git clone git@github.com:Sayantani-Bhattacharya/unitree_go2_nav.git
+         git clone https://github.com/jamission/unitree_go2_nav_foxy.git
          cd unitree_go2_nav
      
   2. Pull the Unitree SDK Wrapper submodule.
@@ -30,7 +30,7 @@ Package Name: unitree_go2_nav
      
   3. Follow the setup and build instructions mentioned in the unitree_ros2 package ReadMe. This will get you connected to the real Robot.
   4.     cd ../
-         source /opt/ros/jazzy/setup.bash
+         source /opt/ros/foxy/setup.bash
          colcon build
          source install/setup.bash
 
@@ -55,7 +55,7 @@ Package Name: unitree_go2_nav
    Terminal 2:
    
        cd unitree_ros
-       source /opt/ros/jazzy/setup.bash
+       source /opt/ros/foxy/setup.bash
        source install/setup.bash
        ./install/unitree_ros2_example/bin/high_level_ctrl
 
@@ -70,7 +70,7 @@ Package Name: unitree_go2_nav
 ## For developing autonomy packages with this as a base package:
 Add this to your repository as a submodule
 
-      git submodule add git@github.com:Sayantani-Bhattacharya/unitree_go2_nav.git 
+      git submodule add https://github.com/jamission/unitree_go2_nav_foxy.git
       git submodule update --init --recursive 
       git commit -m "Added submodule unitree_go2_nav" 
       git push origin main 

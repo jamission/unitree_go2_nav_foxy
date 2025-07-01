@@ -35,6 +35,12 @@ Package Name: unitree_go2_nav_foxy
          source /opt/ros/foxy/setup.bash
          colcon build
          source install/setup.bash
+  5. Make sure rtabmap is installed:
+       `sudo apt install ros-foxy-rtabmap-ros`
+     
+      and verify install (this should return a path if successful)
+          `ros2 pkg prefix rtabmap_slam`
+      
 
 ## Directions:
 

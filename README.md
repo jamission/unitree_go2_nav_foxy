@@ -1,6 +1,8 @@
 # ROS2 Navigation for Unitree GO2 (Foxy).
 Author: Sayantani Bhattacharya
+</br></br>
 Adapted for Foxy by @jamission
+</br></br>
 This is a standalone package, that has code and launch files for manual navigation operation on Unitree GO2.
 </br></br>
 Using: 
